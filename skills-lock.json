@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "nvidia-skill-finder": {
+      "source": "nvidia/skills",
+      "sourceType": "github",
+      "skillPath": "skills/nvidia-skill-finder/SKILL.md",
+      "computedHash": "4f653088716a10fe596a280f87333ad67e10a54d965ffcdb554dcc52cf0ee8de"
+    }
+  }
+}
