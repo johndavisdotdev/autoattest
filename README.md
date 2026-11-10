@@ -44,17 +44,14 @@ fingerprint (see `attest/roots.go`).
 ## Build
 
 ```sh
-go build -o autoattest .
+make build   # builds ./autoattest, stamped with version/commit/date from git
+make dist    # builds dist/autoattest_<version>_<arch>.deb (installs /usr/bin/autoattest)
+make test
+make clean
 ```
 
-You can set the version information at build time:
-
-```sh
-go build -ldflags "-X github.com/locktera/autoattest/cmd.version=v1.0.0 \
-  -X github.com/locktera/autoattest/cmd.commit=$(git rev-parse --short HEAD) \
-  -X github.com/locktera/autoattest/cmd.date=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-  -o autoattest .
-```
+The version comes from `git describe`; override it with `make dist VERSION=v1.0.0`.
+A C toolchain is required because NVML is accessed through cgo.
 
 ## Usage
 
